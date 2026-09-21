@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Banking Dashboard</title>
+    <title>Banking Dashboard - Desktop</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -12,214 +12,338 @@
         .font-mono-num { font-family: 'JetBrains Mono', monospace; }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex justify-center items-center p-0 sm:p-4">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex">
 
-    <!-- Mobile Screen Shell -->
-    <div class="w-full max-w-md bg-slate-900 border border-slate-800 rounded-none sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between min-h-screen sm:min-h-[844px]">
-        
-        <!-- TOP CONTAINER -->
-        <div>
-            <!-- 1. Pure Vector Profile & Greeting Header -->
-            <header class="p-6 pb-4 border-b border-slate-800/60 bg-slate-900/50 backdrop-blur-md">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-3">
-                        <!-- Stylized Geometric Monogram Badge ("K") -->
-                        <div class="relative w-11 h-11 bg-slate-800 border border-slate-700 rounded-xl flex items-center justify-center font-bold text-lg text-emerald-400 shadow-inner">
-                            K
-                            <span class="absolute -top-1 -right-1 w-3 h-3 bg-emerald-500 border-2 border-slate-900 rounded-full"></span>
-                        </div>
-                        <div>
-                            <div class="flex items-center space-x-1.5">
-                                <h1 class="text-sm font-semibold text-slate-200">Good morning, Kurt</h1>
-                                <!-- Account Verified Security Badge -->
-                                <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                            <span class="text-[10px] uppercase tracking-wider font-semibold text-emerald-400/90 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">Account Verified</span>
-                        </div>
-                    </div>
-
-                    <!-- Header Utility Icons -->
-                    <div class="flex items-center space-x-2">
-                        <button class="p-2 bg-slate-800/60 hover:bg-slate-800 rounded-lg text-slate-400 hover:text-slate-200 border border-slate-700/50 transition">
-                            <!-- Security Shield SVG -->
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                        </button>
-                        <button class="p-2 bg-slate-800/60 hover:bg-slate-800 rounded-lg text-slate-400 hover:text-slate-200 border border-slate-700/50 transition relative">
-                            <!-- Notification Bell SVG -->
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
-                            <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-blue-500 rounded-full"></span>
-                        </button>
-                    </div>
+    <!-- DESKTOP SIDEBAR -->
+    <aside class="w-64 bg-slate-900 border-r border-slate-800 hidden md:flex flex-col justify-between p-6 shrink-0">
+        <div class="space-y-8">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-emerald-500/10 border border-emerald-500/30 rounded-xl flex items-center justify-center font-bold text-xl text-emerald-400">
+                    Vault
                 </div>
-            </header>
+                <span class="text-lg font-bold text-slate-100 tracking-tight">FinTech App</span>
+            </div>
 
-            <main class="p-6 space-y-6">
-                <!-- 2. Balance & Action Grid -->
-                <section class="bg-slate-950 border border-slate-800 rounded-2xl p-5 space-y-4 shadow-sm">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <span class="text-xs font-medium text-slate-400 uppercase tracking-wider">Total Available Balance</span>
-                            <div class="flex items-center space-x-3 mt-1">
-                                <h2 class="text-3xl font-bold font-mono-num text-slate-50 tracking-tight">₱14,850.50</h2>
-                                <!-- Visibility Toggle SVG -->
-                                <button class="text-slate-500 hover:text-slate-300 transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-                                </button>
+            <!-- Navigation Links -->
+            <nav class="space-y-2">
+                <a href="#" class="flex items-center space-x-3 bg-blue-600/10 border border-blue-500/20 text-blue-400 px-4 py-3 rounded-xl font-medium text-sm transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-slate-400 hover:bg-slate-800 hover:text-slate-200 px-4 py-3 rounded-xl font-medium text-sm transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                    <span>Transfers</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-slate-400 hover:bg-slate-800 hover:text-slate-200 px-4 py-3 rounded-xl font-medium text-sm transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <span>Payments</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-slate-400 hover:bg-slate-800 hover:text-slate-200 px-4 py-3 rounded-xl font-medium text-sm transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Vault Footer Badge -->
+        <div class="border-t border-slate-800/80 pt-4 flex items-center space-x-2 text-[11px] text-slate-500 font-mono-num">
+            <svg class="w-4 h-4 text-emerald-500/80 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            <span>256-BIT ENCRYPTED</span>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="flex-1 flex flex-col justify-between overflow-y-auto">
+        
+        <!-- TOP HEADER -->
+        <header class="p-6 border-b border-slate-800/60 bg-slate-900/50 backdrop-blur-md flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <!-- User Avatar Badge -->
+                <div class="relative w-11 h-11 bg-slate-800 border border-slate-700 rounded-xl flex items-center justify-center font-bold text-lg text-emerald-400 shadow-inner">
+                    K
+                    <span class="absolute -top-1 -right-1 w-3 h-3 bg-emerald-500 border-2 border-slate-900 rounded-full"></span>
+                </div>
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <h1 class="text-base font-semibold text-slate-200">Good morning, Kurt</h1>
+                        <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-wider font-semibold text-emerald-400/90 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">Account Verified</span>
+                </div>
+            </div>
+
+            <!-- Utility Buttons -->
+            <div class="flex items-center space-x-3">
+                <button onclick="showAlert('Security Shield: All 256-bit encryption services are active.')" class="p-2.5 bg-slate-800/60 hover:bg-slate-800 rounded-xl text-slate-400 hover:text-slate-200 border border-slate-700/50 transition active:scale-95">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </button>
+                <button onclick="showAlert('Notifications: No new unread alerts.')" class="p-2.5 bg-slate-800/60 hover:bg-slate-800 rounded-xl text-slate-400 hover:text-slate-200 border border-slate-700/50 transition relative active:scale-95">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                    <span class="absolute top-2 right-2 w-2 h-2 bg-blue-500 rounded-full"></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- DASHBOARD BODY CONTENT -->
+        <main class="p-8 space-y-8 max-w-7xl w-full mx-auto">
+            
+            <!-- TOP GRID: BALANCE & CASH FLOW CARDS -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <!-- Main Balance & Action Card -->
+                <section class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-6 shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-xs font-medium text-slate-400 uppercase tracking-wider">Total Available Balance</span>
+                                <div class="flex items-center space-x-3 mt-2">
+                                    <h2 id="balanceText" class="text-4xl font-bold font-mono-num text-slate-50 tracking-tight">₱14,850.50</h2>
+                                    <button onclick="toggleBalanceVisibility()" class="text-slate-500 hover:text-slate-300 transition active:scale-90">
+                                        <svg id="eyeIcon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
+                            <span class="inline-flex items-center space-x-1 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono-num text-xs font-semibold rounded-lg">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7 7 7M12 3v18"/></svg>
+                                <span>+12.4%</span>
+                            </span>
                         </div>
-                        <!-- 24h Change Indicator -->
-                        <span class="inline-flex items-center space-x-1 px-2.5 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono-num text-xs font-semibold rounded-md">
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7 7 7M12 3v18"/></svg>
-                            <span>+12.4%</span>
-                        </span>
+
+                        <div class="flex items-center justify-between pt-4 mt-4 border-t border-slate-800">
+                            <span class="text-xs font-mono-num text-slate-400">Account Number: •••• 4821</span>
+                            <button onclick="copyAccountNumber(this)" class="flex items-center space-x-1.5 text-xs text-blue-400 hover:text-blue-300 font-medium active:scale-95 transition">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                <span id="copyBtnText">Copy</span>
+                            </button>
+                        </div>
                     </div>
 
-                    <!-- Account Identifier -->
-                    <div class="flex items-center justify-between pt-2 border-t border-slate-900">
-                        <span class="text-xs font-mono-num text-slate-400">Account: •••• 4821</span>
-                        <button class="flex items-center space-x-1 text-xs text-blue-400 hover:text-blue-300 font-medium">
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                            <span>Copy</span>
-                        </button>
-                    </div>
-
-                    <!-- Action Chips -->
-                    <div class="grid grid-cols-4 gap-2 pt-2">
-                        <button class="py-2.5 px-3 bg-blue-600 hover:bg-blue-500 text-white font-medium text-xs rounded-xl flex flex-col items-center justify-center space-y-1 shadow-lg shadow-blue-600/20 transition">
+                    <!-- Action Grid Buttons -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <button onclick="openModal('Send Money', 'Enter recipient name or account number:')" class="py-3 px-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs rounded-xl flex items-center justify-center space-x-2 shadow-lg shadow-blue-600/20 transition active:scale-95">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
                             <span>Send</span>
                         </button>
-                        <button class="py-2.5 px-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs rounded-xl flex flex-col items-center justify-center space-y-1 border border-slate-700/50 transition">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                        <button onclick="openModal('Transfer Funds', 'Select destination account:')" class="py-3 px-4 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs rounded-xl flex items-center justify-center space-x-2 border border-slate-700/50 transition active:scale-95">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
                             <span>Transfer</span>
                         </button>
-                        <button class="py-2.5 px-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs rounded-xl flex flex-col items-center justify-center space-y-1 border border-slate-700/50 transition">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        <button onclick="openModal('Pay Bills', 'Enter biller name or reference number:')" class="py-3 px-4 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs rounded-xl flex items-center justify-center space-x-2 border border-slate-700/50 transition active:scale-95">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                             <span>Pay Bills</span>
                         </button>
-                        <button class="py-2.5 px-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-xs rounded-xl flex flex-col items-center justify-center space-y-1 border border-slate-700/50 transition">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        <button onclick="openModal('Add Cash', 'Enter cash-in amount:')" class="py-3 px-4 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs rounded-xl flex items-center justify-center space-x-2 border border-slate-700/50 transition active:scale-95">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                             <span>Add</span>
                         </button>
                     </div>
                 </section>
 
-                <!-- 3. Daily Cash Flow Breakdown -->
-                <section class="space-y-3">
-                    <div class="grid grid-cols-2 gap-3">
-                        <!-- Money In Card -->
-                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-3.5 flex items-center justify-between">
-                            <div>
-                                <span class="text-[11px] font-medium text-slate-400 block">Money In / Today</span>
-                                <span class="text-sm font-bold font-mono-num text-emerald-400 mt-0.5 block">+₱3,200.00</span>
-                            </div>
-                            <div class="w-7 h-7 bg-emerald-500/10 border border-emerald-500/20 rounded-lg flex items-center justify-center text-emerald-400">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                            </div>
+                <!-- Daily Overview & Spending Limit -->
+                <section class="space-y-4 flex flex-col justify-between">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between">
+                            <span class="text-xs font-medium text-slate-400">Money In / Today</span>
+                            <span class="text-base font-bold font-mono-num text-emerald-400 mt-2">+₱3,200.00</span>
                         </div>
-
-                        <!-- Money Out Card -->
-                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-3.5 flex items-center justify-between">
-                            <div>
-                                <span class="text-[11px] font-medium text-slate-400 block">Money Out / Today</span>
-                                <span class="text-sm font-bold font-mono-num text-rose-400 mt-0.5 block">-₱1,120.00</span>
-                            </div>
-                            <div class="w-7 h-7 bg-rose-500/10 border border-rose-500/20 rounded-lg flex items-center justify-center text-rose-400">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
-                            </div>
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between">
+                            <span class="text-xs font-medium text-slate-400">Money Out / Today</span>
+                            <span class="text-base font-bold font-mono-num text-rose-400 mt-2">-₱1,120.00</span>
                         </div>
                     </div>
 
                     <!-- Daily Spending Limit Bar -->
-                    <div class="bg-slate-950 border border-slate-800 rounded-xl p-3.5 space-y-2">
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3">
                         <div class="flex justify-between text-xs">
                             <span class="text-slate-400 font-medium">Daily Spending Limit</span>
                             <span class="font-mono-num text-slate-300"><strong class="text-slate-100">₱450.00</strong> / ₱1,000.00</span>
                         </div>
-                        <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
                             <div class="bg-blue-500 h-full rounded-full" style="width: 45%;"></div>
                         </div>
-                        <div class="text-[10px] text-slate-500 text-right">₱550.00 remaining</div>
+                        <div class="text-xs text-slate-500 text-right">₱550.00 remaining</div>
                     </div>
                 </section>
-
-                <!-- 4. Typography & Vector Transaction Feed ("Today's Activity") -->
-                <section class="space-y-3">
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Today's Activity</h3>
-                        <a href="#" class="text-xs text-blue-400 hover:text-blue-300 font-medium">View All</a>
-                    </div>
-
-                    <div class="space-y-2">
-                        <!-- Item 1: Coffee -->
-                        <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-3 flex items-center justify-between">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-9 h-9 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-lg flex items-center justify-center">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
-                                </div>
-                                <div>
-                                    <div class="text-xs font-semibold text-slate-200">Arabica Coffee</div>
-                                    <div class="text-[10px] text-slate-500 flex items-center space-x-2 mt-0.5">
-                                        <span>08:42 AM</span>
-                                        <span>•</span>
-                                        <span class="text-emerald-500 font-medium">Settled</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="text-xs font-bold font-mono-num text-slate-100">-₱180.00</span>
-                        </div>
-
-                        <!-- Item 2: Cloud Server -->
-                        <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-3 flex items-center justify-between">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-9 h-9 bg-purple-500/10 border border-purple-500/20 text-purple-400 rounded-lg flex items-center justify-center">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 001-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
-                                </div>
-                                <div>
-                                    <div class="text-xs font-semibold text-slate-200">Cloud Hosting Sub</div>
-                                    <div class="text-[10px] text-slate-500 flex items-center space-x-2 mt-0.5">
-                                        <span>07:15 AM</span>
-                                        <span>•</span>
-                                        <span class="text-emerald-500 font-medium">Settled</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="text-xs font-bold font-mono-num text-slate-100">-₱940.00</span>
-                        </div>
-
-                        <!-- Item 3: Bank Deposit -->
-                        <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-3 flex items-center justify-between">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-9 h-9 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-lg flex items-center justify-center">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg>
-                                </div>
-                                <div>
-                                    <div class="text-xs font-semibold text-slate-200">Bank Transfer Deposit</div>
-                                    <div class="text-[10px] text-slate-500 flex items-center space-x-2 mt-0.5">
-                                        <span>Yesterday</span>
-                                        <span>•</span>
-                                        <span class="text-emerald-500 font-medium">Settled</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="text-xs font-bold font-mono-num text-emerald-400">+₱3,200.00</span>
-                        </div>
-                    </div>
-                </section>
-            </main>
-        </div>
-
-        <!-- 5. Vault Encryption Footer -->
-        <footer class="p-4 border-t border-slate-800/60 bg-slate-950 text-center">
-            <div class="flex items-center justify-center space-x-1.5 text-[10px] text-slate-500 font-mono-num">
-                <svg class="w-3.5 h-3.5 text-emerald-500/80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                <span>256-BIT HARDWARE VAULT ENCRYPTED</span>
             </div>
-        </footer>
 
+            <!-- BOTTOM SECTION: RECENT TRANSACTIONS FEED -->
+            <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-sm font-bold text-slate-200 uppercase tracking-wider">Recent Activity</h3>
+                    <button onclick="toggleViewAll(this)" class="text-xs text-blue-400 hover:text-blue-300 font-medium">View All</button>
+                </div>
+
+                <div id="activityFeed" class="space-y-3">
+                    <!-- Item 1 -->
+                    <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-4 flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-slate-200">Arabica Coffee</div>
+                                <div class="text-xs text-slate-500 flex items-center space-x-2 mt-0.5">
+                                    <span>08:42 AM</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-500 font-medium">Settled</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-sm font-bold font-mono-num text-slate-100">-₱180.00</span>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-4 flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-purple-500/10 border border-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 001-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-slate-200">Cloud Hosting Sub</div>
+                                <div class="text-xs text-slate-500 flex items-center space-x-2 mt-0.5">
+                                    <span>07:15 AM</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-500 font-medium">Settled</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-sm font-bold font-mono-num text-slate-100">-₱940.00</span>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="bg-slate-950 border border-slate-800/80 rounded-xl p-4 flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold text-slate-200">Bank Transfer Deposit</div>
+                                <div class="text-xs text-slate-500 flex items-center space-x-2 mt-0.5">
+                                    <span>Yesterday</span>
+                                    <span>•</span>
+                                    <span class="text-emerald-500 font-medium">Settled</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-sm font-bold font-mono-num text-emerald-400">+₱3,200.00</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="p-4 border-t border-slate-800 bg-slate-900/50 text-center text-xs text-slate-500">
+            &copy; 2026 FinTech Vault. All rights reserved.
+        </footer>
     </div>
 
+    <!-- INTERACTIVE MODAL POPUP -->
+    <div id="actionModal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+        <div class="bg-slate-900 border border-slate-800 w-full max-w-md rounded-2xl p-6 space-y-4 shadow-2xl">
+            <h3 id="modalTitle" class="text-base font-bold text-slate-100">Action Title</h3>
+            <p id="modalLabel" class="text-xs text-slate-400">Enter details below:</p>
+            <input type="text" id="modalInput" placeholder="Type here..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-blue-500">
+            <div class="flex space-x-3 pt-2">
+                <button onclick="closeModal()" class="flex-1 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold rounded-xl border border-slate-700/50 transition">Cancel</button>
+                <button onclick="submitModal()" class="flex-1 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-xl transition">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        let isBalanceHidden = false;
+        const actualBalance = "₱14,850.50";
+        
+        function toggleBalanceVisibility() {
+            const balanceText = document.getElementById("balanceText");
+            const eyeIcon = document.getElementById("eyeIcon");
+            
+            isBalanceHidden = !isBalanceHidden;
+            
+            if (isBalanceHidden) {
+                balanceText.innerText = "••••••••";
+                eyeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858-5.908a10.038 10.038 0 012.122-.063c4.478 0 8.268 2.943 9.542 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21M3 3l18 18"/>`;
+            } else {
+                balanceText.innerText = actualBalance;
+                eyeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>`;
+            }
+        }
+
+        function copyAccountNumber(btn) {
+            navigator.clipboard.writeText("4821");
+            const copyText = document.getElementById("copyBtnText");
+            copyText.innerText = "Copied!";
+            setTimeout(() => {
+                copyText.innerText = "Copy";
+            }, 2000);
+        }
+
+        function showAlert(msg) {
+            alert(msg);
+        }
+
+        function openModal(title, label) {
+            document.getElementById("modalTitle").innerText = title;
+            document.getElementById("modalLabel").innerText = label;
+            document.getElementById("modalInput").value = "";
+            document.getElementById("actionModal").classList.remove("hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("actionModal").classList.add("hidden");
+        }
+
+        function submitModal() {
+            const val = document.getElementById("modalInput").value;
+            if (val.trim() === "") {
+                alert("Please enter a valid value.");
+                return;
+            }
+            alert(`Success! Processed request for: ${val}`);
+            closeModal();
+        }
+
+        let isExpanded = false;
+        function toggleViewAll(btn) {
+            const activityFeed = document.getElementById("activityFeed");
+            
+            if (!isExpanded) {
+                const extraItem = document.createElement("div");
+                extraItem.id = "extraActivityItem";
+                extraItem.className = "bg-slate-950 border border-slate-800/80 rounded-xl p-4 flex items-center justify-between";
+                extraItem.innerHTML = `
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-slate-200">Grocery Store</div>
+                            <div class="text-xs text-slate-500 flex items-center space-x-2 mt-0.5">
+                                <span>2 days ago</span>
+                                <span>•</span>
+                                <span class="text-emerald-500 font-medium">Settled</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-sm font-bold font-mono-num text-slate-100">-₱450.00</span>
+                `;
+                activityFeed.appendChild(extraItem);
+                btn.innerText = "Show Less";
+                isExpanded = true;
+            } else {
+                const extraItem = document.getElementById("extraActivityItem");
+                if (extraItem) extraItem.remove();
+                btn.innerText = "View All";
+                isExpanded = false;
+            }
+        }
+    </script>
 </body>
 </html>
